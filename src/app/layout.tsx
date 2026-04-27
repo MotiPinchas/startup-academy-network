@@ -10,7 +10,7 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: "Startup Academic Network",
-  description: "פלטפורמה ליזמים להתחבר, למנטורים ולתכנים",
+  description: "סטארטאפ אקדמי נטוורק — קהילת יזמים שמתקדמים יחד! מפגש עבודה שבועי, ליווי מקצועי וקהילה איכותית של יזמים.",
 };
 
 export default function RootLayout({
