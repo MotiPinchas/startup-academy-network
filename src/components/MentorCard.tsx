@@ -26,7 +26,6 @@ export default function MentorCard({ mentor }: { mentor: Mentor }) {
 
       <div className="text-center">
         <div className="flex items-center justify-center gap-1">
-          <p className="text-sm font-semibold text-gray-800 leading-tight">{mentor.name}</p>
           <a
             href={mentor.linkedin ?? `https://linkedin.com/search/results/people/?keywords=${encodeURIComponent(mentor.name)}`}
             target="_blank"
@@ -37,6 +36,7 @@ export default function MentorCard({ mentor }: { mentor: Mentor }) {
           >
             <LinkedInIcon size={13} />
           </a>
+          <p className="text-sm font-semibold text-gray-800 leading-tight">{mentor.name}</p>
         </div>
         <p className="text-xs text-blue-600 leading-tight">{mentor.expertise}</p>
         <p className="text-xs text-gray-400 mt-0.5 leading-tight">{mentor.title}</p>
@@ -58,17 +58,29 @@ export default function MentorCard({ mentor }: { mentor: Mentor }) {
 
       {/* Book button pinned to bottom */}
       <div className="mt-auto w-full pt-1">
-        <button
-          className={`w-full text-xs py-1.5 rounded-lg transition-colors font-medium ${
-            mentor.available
-              ? 'bg-blue-600 hover:bg-blue-700 text-white'
-              : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-          }`}
-          disabled={!mentor.available}
-          onClick={e => e.stopPropagation()}
-        >
-          {mentor.available ? 'לקביעת פגישה' : 'לא זמין'}
-        </button>
+        {mentor.available && mentor.whatsapp ? (
+          <a
+            href={`https://wa.me/${mentor.whatsapp}?text=${encodeURIComponent('היי, אני רוצה לקבוע פגישה 🙏')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center text-xs bg-blue-600 hover:bg-blue-700 text-white py-1.5 rounded-lg transition-colors font-medium"
+            onClick={e => e.stopPropagation()}
+          >
+            לקביעת פגישה
+          </a>
+        ) : (
+          <button
+            className={`w-full text-xs py-1.5 rounded-lg transition-colors font-medium ${
+              mentor.available
+                ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+            }`}
+            disabled={!mentor.available}
+            onClick={e => e.stopPropagation()}
+          >
+            {mentor.available ? 'לקביעת פגישה' : 'לא זמין'}
+          </button>
+        )}
       </div>
     </div>
   );

@@ -58,6 +58,15 @@ export default function Drawer({ open, onClose, onNavigate, feedbackLink = '#', 
           >
             קבוצות ווטסאפ
           </a>
+          <a
+            href="https://us06web.zoom.us/j/4883949143"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-3.5 text-sm text-blue-600 hover:bg-blue-50 transition-colors flex items-center gap-2"
+          >
+            <span>🎥</span>
+            Zoom
+          </a>
           <hr className="my-2 border-gray-100" />
           <button
             onClick={() => navigate('entrepreneurs')}

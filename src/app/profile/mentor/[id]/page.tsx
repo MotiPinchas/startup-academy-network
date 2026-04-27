@@ -92,10 +92,16 @@ export default function MentorProfilePage() {
 
       {/* Actions */}
       <div className="px-4 mt-4 flex flex-col gap-3">
-        {mentor.available && (
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-2xl transition-colors">
-            קבע פגישה
-          </button>
+        {mentor.whatsapp && (
+          <a
+            href={`https://wa.me/${mentor.whatsapp}?text=${encodeURIComponent(`היי ${mentor.name}, ראיתי אותך ב-Startup Academic Network ורוצה להתחבר! 🚀`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3.5 rounded-2xl transition-colors"
+          >
+            <span>💬</span>
+            לקביעת פגישה ב-WhatsApp
+          </a>
         )}
         {mentor.linkedin && (
           <a

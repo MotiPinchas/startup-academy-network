@@ -6,13 +6,30 @@ export interface Mentor {
   avatar: string;
   available: boolean;
   linkedin?: string;
+  whatsapp?: string;
   bio?: string;
 }
 
 export const mentors: Mentor[] = [
-  { id: '1', name: 'מוטי פנחס', title: 'מנהל הקהילה ואיש האופרציה', expertise: 'Tech & Product', avatar: '/moti-pinchas.png', available: true, linkedin: 'https://www.linkedin.com/in/motipinchas/', bio: 'מנהל קהילת Startup Academic Network, אחראי על האופרציה, הטכנולוגיה והמוצר של הרשת.' },
-  { id: '2', name: 'ד"ר שרה מנדל', title: 'מנהלת קרן YVC', expertise: 'Fundraising & VC', avatar: 'https://i.pravatar.cc/150?img=45', available: true },
-  { id: '3', name: 'יוסי פרידמן', title: 'Serial Entrepreneur x3', expertise: 'GTM & Sales', avatar: 'https://i.pravatar.cc/150?img=22', available: false },
-  { id: '4', name: 'הילה דרור', title: 'VP Marketing, Wix', expertise: 'Branding & Growth', avatar: 'https://i.pravatar.cc/150?img=49', available: true },
-  { id: '5', name: 'אלי זיו', title: 'Angel Investor', expertise: 'Legal & IP', avatar: 'https://i.pravatar.cc/150?img=11', available: false },
+  {
+    id: '1',
+    name: 'מוטי פנחס',
+    title: 'מנהל הקהילה ואיש האופרציה',
+    expertise: 'Tech & Product',
+    avatar: '/moti-pinchas.png',
+    available: true,
+    linkedin: 'https://www.linkedin.com/in/motipinchas/',
+    whatsapp: '972506979963',
+    bio: 'מנהל קהילת Startup Academic Network, אחראי על האופרציה, הטכנולוגיה והמוצר של הרשת.',
+  },
+  {
+    id: '2',
+    name: 'טל כתרן',
+    title: 'Startup & Accelerators Guru',
+    expertise: 'Business & Sales',
+    avatar: '/tal-catran.png',
+    available: true,
+    whatsapp: '972505349858',
+    bio: 'מנטור סדרתי שליווה מעל 2,000 סטארטאפים בתוכניות האצה — מגייס הון, בונה מנועי מכירות ועוזר ליזמים להפוך רעיונות למוצרים משני מציאות.',
+  },
 ];
