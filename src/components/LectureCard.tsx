@@ -23,10 +23,8 @@ export default function LectureCard({ lecture }: { lecture: Lecture }) {
         )}
       </div>
       <div className="p-2.5">
-        <span className="text-xs text-orange-500 font-medium">{lecture.tag}</span>
-        <p className="text-sm font-semibold text-gray-800 leading-tight mt-0.5 line-clamp-2">{lecture.title}</p>
+        <p className="text-sm font-semibold text-gray-800 leading-tight line-clamp-2">{lecture.title}</p>
         <div className="flex items-center gap-1 mt-1">
-          <p className="text-xs text-gray-400">{lecture.speaker}</p>
           <a
             href={`https://linkedin.com/search/results/people/?keywords=${encodeURIComponent(lecture.speaker)}`}
             target="_blank"
@@ -36,7 +34,19 @@ export default function LectureCard({ lecture }: { lecture: Lecture }) {
           >
             <LinkedInIcon size={12} />
           </a>
+          <p className="text-xs text-gray-400">{lecture.speaker}</p>
         </div>
+        <a
+          href={lecture.url ?? '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 flex items-center justify-center gap-1.5 w-full text-xs bg-red-600 hover:bg-red-700 text-white py-1.5 rounded-lg transition-colors font-medium"
+        >
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+            <polygon points="2,1 9,5 2,9" />
+          </svg>
+          לצפייה
+        </a>
       </div>
     </div>
   );

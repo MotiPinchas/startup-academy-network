@@ -22,7 +22,7 @@ export default function MentorProfilePage() {
   if (isLoading || !isAuthenticated) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-purple-600 border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -31,7 +31,7 @@ export default function MentorProfilePage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4" dir="rtl">
         <p className="text-gray-500">מנטור לא נמצא</p>
-        <Link href="/home" className="text-purple-600 hover:underline">חזרה לדף הבית</Link>
+        <Link href="/home" className="text-blue-600 hover:underline">חזרה לדף הבית</Link>
       </div>
     );
   }
@@ -41,7 +41,7 @@ export default function MentorProfilePage() {
       {/* Header */}
       <div className="bg-white border-b border-gray-100 px-4 py-3 flex items-center gap-3">
         <button onClick={() => router.back()} className="text-gray-500 hover:text-gray-700 text-xl leading-none">
-          ←
+          →
         </button>
         <h1 className="text-base font-semibold text-gray-800">פרופיל מנטור</h1>
       </div>
@@ -54,7 +54,7 @@ export default function MentorProfilePage() {
             alt={mentor.name}
             width={100}
             height={100}
-            className="rounded-full object-cover ring-4 ring-purple-100"
+            className="rounded-full object-cover ring-4 ring-blue-100"
           />
           <span className={`absolute bottom-1 right-1 w-4 h-4 rounded-full border-2 border-white ${mentor.available ? 'bg-green-400' : 'bg-gray-300'}`} />
         </div>
@@ -74,7 +74,7 @@ export default function MentorProfilePage() {
               </a>
             )}
           </div>
-          <p className="text-purple-600 font-medium mt-0.5">{mentor.expertise}</p>
+          <p className="text-blue-600 font-medium mt-0.5">{mentor.expertise}</p>
           <p className="text-sm text-gray-500 mt-0.5">{mentor.title}</p>
           <span className={`inline-block mt-2 text-xs px-3 py-1 rounded-full font-medium ${mentor.available ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
             {mentor.available ? 'זמין לפגישה' : 'לא זמין כעת'}
@@ -93,7 +93,7 @@ export default function MentorProfilePage() {
       {/* Actions */}
       <div className="px-4 mt-4 flex flex-col gap-3">
         {mentor.available && (
-          <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3.5 rounded-2xl transition-colors">
+          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-2xl transition-colors">
             קבע פגישה
           </button>
         )}

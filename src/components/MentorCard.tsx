@@ -19,7 +19,7 @@ export default function MentorCard({ mentor }: { mentor: Mentor }) {
           alt={mentor.name}
           width={64}
           height={64}
-          className="rounded-full object-cover ring-2 ring-purple-100"
+          className="rounded-full object-cover ring-2 ring-blue-100"
         />
         <span className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${mentor.available ? 'bg-green-400' : 'bg-gray-300'}`} />
       </div>
@@ -38,7 +38,7 @@ export default function MentorCard({ mentor }: { mentor: Mentor }) {
             <LinkedInIcon size={13} />
           </a>
         </div>
-        <p className="text-xs text-purple-600 leading-tight">{mentor.expertise}</p>
+        <p className="text-xs text-blue-600 leading-tight">{mentor.expertise}</p>
         <p className="text-xs text-gray-400 mt-0.5 leading-tight">{mentor.title}</p>
       </div>
 
@@ -50,7 +50,7 @@ export default function MentorCard({ mentor }: { mentor: Mentor }) {
       {/* Expertise bubbles */}
       <div className="flex flex-wrap justify-center gap-1 w-full">
         {mentor.expertise.split('&').map(tag => (
-          <span key={tag} className="text-[10px] bg-purple-50 text-purple-600 px-2 py-0.5 rounded-full">
+          <span key={tag} className="text-[10px] bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">
             {tag.trim()}
           </span>
         ))}
@@ -61,13 +61,13 @@ export default function MentorCard({ mentor }: { mentor: Mentor }) {
         <button
           className={`w-full text-xs py-1.5 rounded-lg transition-colors font-medium ${
             mentor.available
-              ? 'bg-purple-600 hover:bg-purple-700 text-white'
+              ? 'bg-blue-600 hover:bg-blue-700 text-white'
               : 'bg-gray-100 text-gray-400 cursor-not-allowed'
           }`}
           disabled={!mentor.available}
           onClick={e => e.stopPropagation()}
         >
-          {mentor.available ? 'Book' : 'לא זמין'}
+          {mentor.available ? 'לקביעת פגישה' : 'לא זמין'}
         </button>
       </div>
     </div>

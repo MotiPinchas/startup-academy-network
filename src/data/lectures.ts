@@ -6,6 +6,7 @@ export interface Lecture {
   thumbnail: string;
   tag: string;
   watched: boolean;
+  url?: string;
 }
 
 export const lectures: Lecture[] = [
