@@ -9,6 +9,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://startup-academy-network.vercel.app"),
   title: "Startup Academic Network",
   description: "Startup Academy Network — קהילת יזמים שמתקדמים יחד! מפגש עבודה שבועי, ליווי מקצועי וקהילה איכותית של יזמים.",
   icons: {
