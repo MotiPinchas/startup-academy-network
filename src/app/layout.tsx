@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Startup Academic Network",
     description: "Startup Academy Network — קהילת יזמים שמתקדמים יחד! מפגש עבודה שבועי, ליווי מקצועי וקהילה איכותית של יזמים.",
-    images: ["/favicon.png"],
+    images: [{ url: "https://startup-academy-network.vercel.app/logo.png", width: 500, height: 500 }],
   },
 };
 
