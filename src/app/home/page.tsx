@@ -35,8 +35,8 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100" dir="rtl">
-      <div className="w-[70%] mx-auto bg-gray-50 min-h-screen">
+    <div className="min-h-screen bg-gray-50" dir="rtl">
+      <div className="w-full max-w-4xl mx-auto min-h-screen">
       <Header onMenuOpen={() => setDrawerOpen(true)} />
 
       <main className="pb-8">
