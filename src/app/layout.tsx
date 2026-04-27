@@ -10,14 +10,14 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: "Startup Academic Network",
-  description: "סטארטאפ אקדמי נטוורק — קהילת יזמים שמתקדמים יחד! מפגש עבודה שבועי, ליווי מקצועי וקהילה איכותית של יזמים.",
+  description: "Startup Academy Network — קהילת יזמים שמתקדמים יחד! מפגש עבודה שבועי, ליווי מקצועי וקהילה איכותית של יזמים.",
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
     title: "Startup Academic Network",
-    description: "סטארטאפ אקדמי נטוורק — קהילת יזמים שמתקדמים יחד! מפגש עבודה שבועי, ליווי מקצועי וקהילה איכותית של יזמים.",
+    description: "Startup Academy Network — קהילת יזמים שמתקדמים יחד! מפגש עבודה שבועי, ליווי מקצועי וקהילה איכותית של יזמים.",
     images: ["/favicon.png"],
   },
 };
