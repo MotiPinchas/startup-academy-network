@@ -70,7 +70,6 @@ export default function EntrepreneurProfilePage() {
         />
         <div className="text-center">
           <div className="flex items-center justify-center gap-2">
-            <h2 className="text-xl font-bold text-gray-900">{entrepreneur.name}</h2>
             {entrepreneur.linkedin && (
               <a
                 href={entrepreneur.linkedin}
@@ -81,6 +80,7 @@ export default function EntrepreneurProfilePage() {
                 <LinkedInIcon size={18} />
               </a>
             )}
+            <h2 className="text-xl font-bold text-gray-900">{entrepreneur.name}</h2>
           </div>
           <p className="text-blue-600 font-semibold mt-0.5">{entrepreneur.startup}</p>
           <p className="text-sm text-gray-500 mt-0.5">{entrepreneur.field}</p>
