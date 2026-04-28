@@ -14,11 +14,16 @@ import { entrepreneurs } from '@/data/entrepreneurs';
 import { mentors } from '@/data/mentors';
 import { lectures } from '@/data/lectures';
 
+function shuffle<T>(arr: T[]): T[] {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+
 export default function HomePage() {
   const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<Tab>('entrepreneurs');
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [shuffledEntrepreneurs] = useState(() => shuffle(entrepreneurs));
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
@@ -41,7 +46,7 @@ export default function HomePage() {
 
       <main className="pb-8">
         <CarouselSection title="יזמים">
-          {entrepreneurs.map(e => (
+          {shuffledEntrepreneurs.map(e => (
             <EntrepreneurCard key={e.id} entrepreneur={e} />
           ))}
         </CarouselSection>
