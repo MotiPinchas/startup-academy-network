@@ -9,6 +9,16 @@ export default function EntrepreneurCard({ entrepreneur }: { entrepreneur: Entre
   const router = useRouter();
 
   const firstName = entrepreneur.name.split(' ')[0];
+
+  function notifyAndOpen(url: string) {
+    fetch('/api/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: entrepreneur.name }),
+    }).catch(() => {});
+    window.open(url, '_blank');
+  }
+
   const whatsappUrl = entrepreneur.whatsapp
     ? `https://wa.me/${entrepreneur.whatsapp}?text=${encodeURIComponent(`היי ${firstName}, ראיתי אותך בקהילה שלנו, סטארטאפ אקדמי נטוורק, ואשמח לקבוע שיחה קצרה.`)}`
     : null;
@@ -70,15 +80,12 @@ export default function EntrepreneurCard({ entrepreneur }: { entrepreneur: Entre
       {/* Connect button pinned to bottom */}
       <div className="mt-auto w-full pt-1">
         {whatsappUrl ? (
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
             className="block w-full text-center text-xs bg-green-500 hover:bg-green-600 text-white py-1.5 rounded-lg transition-colors font-medium"
-            onClick={e => e.stopPropagation()}
+            onClick={e => { e.stopPropagation(); notifyAndOpen(whatsappUrl); }}
           >
             קבע איתי
-          </a>
+          </button>
         ) : (
           <button
             className="w-full text-xs bg-green-500 hover:bg-green-600 text-white py-1.5 rounded-lg transition-colors font-medium"
