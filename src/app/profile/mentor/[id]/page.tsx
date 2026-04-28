@@ -38,6 +38,7 @@ export default function MentorProfilePage() {
 
   return (
     <div className="min-h-screen bg-gray-50" dir="rtl">
+      <div className="w-full max-w-4xl mx-auto">
       {/* Header */}
       <div className="bg-white border-b border-gray-100 px-4 py-3 flex items-center gap-3">
         <button onClick={() => router.back()} className="text-gray-500 hover:text-gray-700 text-xl leading-none">
@@ -120,6 +121,7 @@ export default function MentorProfilePage() {
         >
           חזרה לדף הבית
         </Link>
+      </div>
       </div>
     </div>
   );
