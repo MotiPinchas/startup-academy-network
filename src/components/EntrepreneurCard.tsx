@@ -8,8 +8,9 @@ import { Entrepreneur } from '@/data/entrepreneurs';
 export default function EntrepreneurCard({ entrepreneur }: { entrepreneur: Entrepreneur }) {
   const router = useRouter();
 
+  const firstName = entrepreneur.name.split(' ')[0];
   const whatsappUrl = entrepreneur.whatsapp
-    ? `https://wa.me/${entrepreneur.whatsapp}?text=${encodeURIComponent(`היי ${entrepreneur.name}, ראיתי אותך ב-Startup Academic Network ורוצה להתחבר! 🚀`)}`
+    ? `https://wa.me/${entrepreneur.whatsapp}?text=${encodeURIComponent(`היי ${firstName}, ראיתי אותך בקהילה שלנו, סטארטאפ אקדמי נטוורק, ואשמח לקבוע שיחה קצרה.`)}`
     : null;
 
   return (
