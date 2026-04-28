@@ -109,7 +109,7 @@ export const entrepreneurs: Entrepreneur[] = [
   },
   {
     id: '8',
-    name: 'Tzion Cohen',
+    name: 'ציון כהן',
     startup: '',
     field: '',
     avatar: avatar('T C', 7),
