@@ -8,6 +8,15 @@ import { Mentor } from '@/data/mentors';
 export default function MentorCard({ mentor }: { mentor: Mentor }) {
   const router = useRouter();
 
+  function notifyAndOpen(url: string) {
+    fetch('/api/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: mentor.name }),
+    }).catch(() => {});
+    window.open(url, '_blank');
+  }
+
   return (
     <div
       onClick={() => router.push(`/profile/mentor/${mentor.id}`)}
@@ -59,15 +68,12 @@ export default function MentorCard({ mentor }: { mentor: Mentor }) {
       {/* Book button pinned to bottom */}
       <div className="mt-auto w-full pt-1">
         {mentor.available && mentor.whatsapp ? (
-          <a
-            href={`https://wa.me/${mentor.whatsapp}?text=${encodeURIComponent('היי, אני רוצה לקבוע פגישה 🙏')}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
             className="block w-full text-center text-xs bg-blue-600 hover:bg-blue-700 text-white py-1.5 rounded-lg transition-colors font-medium"
-            onClick={e => e.stopPropagation()}
+            onClick={e => { e.stopPropagation(); notifyAndOpen(`https://wa.me/${mentor.whatsapp}?text=${encodeURIComponent('היי, אני רוצה לקבוע פגישה 🙏')}`); }}
           >
             לקביעת פגישה
-          </a>
+          </button>
         ) : (
           <button
             className={`w-full text-xs py-1.5 rounded-lg transition-colors font-medium ${
